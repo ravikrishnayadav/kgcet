@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+         header {
+            width: 100%;
+            height: 80px; /* Adjust the height as needed */
+            background: url('banner.png') center/cover no-repeat; /* Replace 'your-banner-image.jpg' with your actual image path */
+            text-align: center;
+            color: #fff;
+            padding-top: 50px;
+        }
+
+         nav {
+            background-color: #154360;
+            overflow: hidden;
+        } 
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+             margin-right: 50px /* Adjust the margin as needed to increase the space between navigation buttons */
+        }
+        nav a:hover {
+            background-color: #f39c12;
+            color: black;
+        }
+         nav a.active {
+            background-color: #ddd; /* Set the background color for the active state */
+            color: black; /* Set the text color for the active state */
+        }
+
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: hsl(186.72deg 93.8% 35.43%); 
+        }
+         section {
+            padding: 20px;
+        }
+          button {
+         padding: 17px 40px;
+          border-radius: 50px;
+         cursor: pointer;
+        border: 0;
+         background-color: white;
+         box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+         letter-spacing: 1.5px;
+         text-transform: uppercase;
+        font-size: 15px;
+        transition: all 0.5s ease;
+        }
+        .button-container {
+        text-align: right; /* Align buttons to the right */
+        max-width: 300px; /* Set the maximum width as needed for your square box */
+         margin: 0 auto; /* Center the container */
+        }
+        button:hover {
+         letter-spacing: 3px;
+         background-color: hsl(261deg 80% 48%);
+         color: hsl(0, 0%, 100%);
+         box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+        }
+        button:active {
+        letter-spacing: 3px;
+        background-color: hsl(261deg 80% 48%);
+         color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+         transform: translateY(10px);
+        transition: 100ms;
+        }
+         .button-container {
+        text-align: right; /* Align buttons to the right */
+        max-width: 300px; /* Set the maximum width as needed for your square box */
+          margin: 0 auto; /* Center the container */
+        }
+
+         .button-container button {
+            width: 100%; /* Make buttons fill the container width */
+            padding: 10px;
+            margin: 10px 0; /* Adjust the margin as needed */
+            font-size: 16px;
+        }
+
+        footer {
+        background-color: #154360;
+         color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        }
+             .containe {
+             width: 80%;
+            margin: 0 auto;
+        }
+
+
+           
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Your banner image and text go here -->
+        <h1></h1>
+    </header>
+
+     <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="impdates.html">IMPORTANT DATES</a>
+        <a href="contact.html">CONTACT US</a>
+    </nav>
+
+    <section>
+        <div class="vision-mission">
+            <h2>Vision</h2>
+            <p>To evolve as center of repute for providing quality academic programs amalgamated with creative learning and research excellence to produce graduates with leadership qualities, ethical and human values to serve the nation.
+            To produce highly competent professional leaders for contributing to Socio-economic development of region and the nation.</p>
+
+            <h2>Mission</h2>
+            <p>M1:To provide high quality education with enriched curriculum blended with impactful teaching-learning practices.
+
+            M2:To promote research, entrepreneurship and innovation through industry collaborations.
+
+            M3:To produce highly competent professional leaders for contributing to Socio-economic development of region and the nation.
+             To produce highly competent professional leaders for contributing to Socio-economic development of region and the nation.</p>>
+        </div>
+
+        <div class="button-container">
+            <button>Application Form</button>
+            <button>Print Application</button>
+            <button>Download Hall Ticket</button>
+            <button>Results</button>
+        </div>
+    </section>
+
+    <script>
+        // Add event listeners to each navigation link
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Remove 'active' class from all links
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+
+                // Add 'active' class to the clicked link
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

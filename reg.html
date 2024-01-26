@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #C2DFFF; /* Replace 'your-background-image.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        
+        form {
+            background-color: lightgray; /* Adjust the alpha (4th value) to control background transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Adjust the maximum width as needed */
+            position: relative; /* To allow absolute positioning of the logo */
+            overflow-y: auto; /* Add vertical scrollbar if needed */
+            margin-top: 250px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px; /* Increased padding for a longer button */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            height: auto;
+            max-width: 60px;
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Adjust styles for smaller screens */
+            form {
+                max-width: 100%;
+            }
+        }
+        h2{
+            margin-left: 70px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registrationForm" >
+        <img src="logo.jpeg" alt="Logo" class="logo"> <!-- Replace 'your-logo.png' with the path to your logo image -->
+        <h2>Student Registration</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="fatherName">Father's Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Enter 10-digit phone number">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="district">District:</label>
+        <select id="district" name="district" required>
+            <option value="anantapur">Anantapur</option>
+            <option value="chittoor">Chittoor</option>
+            <option value="east-godavari">East Godavari</option>
+            <!-- Add more districts as needed -->
+        </select>
+
+        
+
+        <label for="photo">Upload Passport Size Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <label for="photo">Upload intermediate hallticket:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <button type="submit" name="register">Register Now</button>
+    </form>
+    <script>
+        // Capture form submission
+        const registrationForm = document.getElementById('registrationForm');
+
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the form from submitting normally
+
+            // Get form data
+            const formData = new FormData(registrationForm);
+
+            // Convert form data to JSON
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            // Store data in localStorage for later use
+            localStorage.setItem('registrationData', JSON.stringify(jsonData));
+
+            alert('Registration form submitted successfully!');
+        });
+    </script>
+
+</body>
+</html>
